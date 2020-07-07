@@ -1,0 +1,25 @@
+--- a/Tests/test_file_webp.py
++++ b/Tests/test_file_webp.py
+@@ -4,6 +4,8 @@ from PIL import Image, WebPImagePlugin
+ 
+ from .helper import PillowTestCase, hopper
+ 
++import os
++
+ try:
+     from PIL import _webp
+ 
+@@ -50,8 +52,12 @@ class TestFileWebp(PillowTestCase):
+ 
+             # generated with:
+             # dwebp -ppm ../../Tests/images/hopper.webp -o hopper_webp_bits.ppm
++            if 'ADTTMP' in os.environ:
++                target_file = os.path.join(os.environ['ADTTMP'], 'hopper_webp.ppm')
++            else:
++                target_file = 'Tests/images/hopper_webp_bits.ppm'
+             self.assert_image_similar_tofile(
+-                image, "Tests/images/hopper_webp_bits.ppm", 1.0
++                image, target_file, 1.0
+             )
+ 
+     def test_write_rgb(self):
