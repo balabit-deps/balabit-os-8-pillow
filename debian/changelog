@@ -1,3 +1,26 @@
+pillow (7.0.0-4ubuntu0.2) focal-security; urgency=medium
+
+  * SECURITY UPDATE: buffer over-read via PCX file
+    - debian/patches/CVE-2020-35653.patch: don't trust the image to specify
+      a buffer size in src/PIL/PcxImagePlugin.py.
+    - CVE-2020-35653
+  * SECURITY UPDATE: heap overflow via YCbCr files
+    - debian/patches/CVE-2020-35654-1.patch: fix tiff comparison warnings
+      in src/libImaging/TiffDecode.c.
+    - debian/patches/CVE-2020-35654-2.patch: fix OOB write in
+      src/libImaging/TiffDecode.c.
+    - debian/patches/CVE-2020-35654-3.patch: rework ReadTile in
+      src/libImaging/TiffDecode.c.
+    - CVE-2020-35654
+  * SECURITY UPDATE: buffer over-read via SGI RLE image file
+    - debian/patches/CVE-2020-35655-1.patch: add checks to
+      src/libImaging/SgiRleDecode.c.
+    - debian/patches/CVE-2020-35655-2.patch: rework error flags in
+      src/libImaging/SgiRleDecode.c.
+    - CVE-2020-35655
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Wed, 13 Jan 2021 09:55:14 -0500
+
 pillow (7.0.0-4ubuntu0.1) focal-security; urgency=medium
 
   * SECURITY UPDATE: multiple out of bounds reads
