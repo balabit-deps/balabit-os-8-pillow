@@ -1,3 +1,35 @@
+pillow (7.0.0-4ubuntu0.3) focal-security; urgency=medium
+
+  * SECURITY UPDATE: insufficient fix for CVE-2020-35654
+    - debian/patches/CVE-2021-25289.patch: improve return code check in
+      src/libImaging/TiffDecode.c.
+    - CVE-2021-25289
+  * SECURITY UPDATE: negative-offset memcpy with an invalid size
+    - debian/patches/CVE-2021-25290.patch: add extra check to
+      src/libImaging/TiffDecode.c.
+    - CVE-2021-25290
+  * SECURITY UPDATE: invalid tile boundaries could lead to an OOB Read
+    - debian/patches/CVE-2021-25291.patch: check tile validity in
+      src/libImaging/TiffDecode.c.
+    - CVE-2021-25291
+  * SECURITY UPDATE: DoS via backtrack regex
+    - debian/patches/CVE-2021-25292.patch: use more specific regex in
+      src/PIL/PdfParser.py.
+    - CVE-2021-25292
+  * SECURITY UPDATE: Out of Bounds Read
+    - debian/patches/CVE-2021-25293.patch: add more checks to
+      src/libImaging/SgiRleDecode.c.
+    - CVE-2021-25293
+  * SECURITY UPDATE: DoS via invalid reported size
+    - debian/patches/CVE-2021-2792x.patch: check reported sizes in
+      src/PIL/BlpImagePlugin.py, src/PIL/IcnsImagePlugin.py,
+      src/PIL/IcoImagePlugin.py.
+    - CVE-2021-27921
+    - CVE-2021-27922
+    - CVE-2021-27923
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Wed, 10 Mar 2021 12:48:44 -0500
+
 pillow (7.0.0-4ubuntu0.2) focal-security; urgency=medium
 
   * SECURITY UPDATE: buffer over-read via PCX file
