@@ -1,3 +1,21 @@
+pillow (7.0.0-4ubuntu0.8) focal-security; urgency=medium
+
+  * SECURITY UPDATE: DoS in ImageFont via large textlength
+    - debian/patches/CVE-2023-44271.patch: added a maximum string length in
+      Tests/test_imagefont.py, docs/reference/ImageFont.rst,
+      src/PIL/ImageFont.py.
+    - CVE-2023-44271
+  * SECURITY UPDATE: PIL.ImageMath.eval Arbitrary Code Execution
+    - debian/patches/CVE-2023-50447-1.patch: don't allow __ or builtins in
+      env dictionarys for ImageMath.eval in src/PIL/ImageMath.py.
+    - debian/patches/CVE-2023-50447-2.patch: allow ops in
+      Tests/test_imagemath.py, src/PIL/ImageMath.py.
+    - debian/patches/CVE-2023-50447-3.patch: include further builtins in
+      Tests/test_imagemath.py, src/PIL/ImageMath.py.
+    - CVE-2023-50447
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Thu, 25 Jan 2024 12:48:42 -0500
+
 pillow (7.0.0-4ubuntu0.7) focal-security; urgency=medium
 
   * SECURITY UPDATE: arbitrary file deletion
