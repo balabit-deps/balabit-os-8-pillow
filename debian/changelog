@@ -1,3 +1,12 @@
+pillow (7.0.0-4ubuntu0.9) focal-security; urgency=medium
+
+  * SECURITY UPDATE: Buffer overflow in imagingcms.c
+    - debian/patches/CVE-2024-28219.patch: Use strncpy
+    to avoid buffer overflow
+    - CVE-2024-28219
+
+ -- Nick Galanis <nick.galanis@canonical.com>  Fri, 12 Apr 2024 15:21:40 +0100
+
 pillow (7.0.0-4ubuntu0.8) focal-security; urgency=medium
 
   * SECURITY UPDATE: DoS in ImageFont via large textlength
